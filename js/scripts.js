@@ -21,3 +21,6 @@ document.write(halfSize);
 
 let minSize = (doubleSize * 2) - (size /2);
 document.write(minSize);
+
+let favoriteFood = 'Skirt Steak';
+document.write(favoriteFood);
