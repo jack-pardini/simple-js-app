@@ -24,3 +24,20 @@ document.write(minSize);
 
 let favoriteFood = 'Skirt Steak';
 document.write(favoriteFood);
+
+let car = {
+    color: 'red',
+    mileage: 10
+  };
+document.write(car);
+
+let annesAge = 27;
+let anne = {
+  name: 'Anne',
+  age: annesAge,
+  child: {
+    name: 'Joe',
+    age: 2
+  }
+}
+
