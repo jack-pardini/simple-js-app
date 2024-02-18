@@ -1,43 +1,64 @@
-alert('Hello world');
+let pokemonList = [];
 
-let myName = 'Jack';
-document.write(myName);
+let pokemons = [
+  {
+    name: 'bulbasaur', 
+    height: 0.7, 
+    abilities: ['chlorophyll', 'overgrow'], 
+    type: ['grass', 'poison']
+  },
+    
+  {
+    name: 'bulbasaur', 
+    height: 0.7, 
+    abilities: ['chlorophyll', 'overgrow'], 
+    type: ['grass', 'poison']
+  },
 
-myName = 'John Doe';
-document.write(myName);
+  {
+    name: 'squirtle',
+    height: 0.5, 
+    abilities: ['rain-dish', 'torrent'], 
+    type: 'water'
+  },
 
-let simpleAddition = 2 + 2;
-document.write(simpleAddition);
-
-let simpleSubtraction = 10 - 5;
-document.write(simpleSubtraction);
-
-let size = 100;
-let doubleSize = size * 2;
-document.write(doubleSize);
-
-let halfSize = size / 2;
-document.write(halfSize);
-
-let minSize = (doubleSize * 2) - (size /2);
-document.write(minSize);
-
-let favoriteFood = 'Skirt Steak';
-document.write(favoriteFood);
-
-let car = {
-    color: 'red',
-    mileage: 10
-  };
-document.write(car);
-
-let annesAge = 27;
-let anne = {
-  name: 'Anne',
-  age: annesAge,
-  child: {
-    name: 'Joe',
-    age: 2
+  {
+    name: 'Pikachu',
+    height: 0.4,
+    type: 'electric',
+    abilities: ['static', 'lightningrod']
   }
-}
+];
+
+let pokemon1 = 
+  {
+    name: 'bulbasaur', 
+    height: 0.7, 
+    abilities: ['chlorophyll', 'overgrow'], 
+    type: ['grass', 'poison']
+  };
+  
+let pokemon2 = 
+  {
+    name: 'charmander', 
+    height: 0.6, 
+    abilities: ['blaze', 'solar-power'], 
+    type: 'fire'
+  };
+
+let pokemon3 = 
+  {
+    name: 'squirtle', 
+    height: 0.5, 
+    abilities: ['rain-dish', 'torrent'], 
+    type: 'water'
+  };
+
+let pokemon4 = 
+  {
+    name: 'Pikachu',
+    height: 0.4,
+    type: 'electric',
+    abilities: ['static', 'lightningrod']
+  }
 
