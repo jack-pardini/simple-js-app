@@ -1,0 +1,520 @@
+/*
+Colors used
+
+Text Color (dark blue): #0E2F44;
+Primary Color - Background (light blue): #B2D1D1;
+Secondary Color - Text, Link, and Primary Button (dark blue): #0E2F44;
+Tertiary Color - Secondary Button and Grid (mid grayish blue): #5F9EA0
+ */
+
+ :root {
+    --primary-color: #ffe559;
+    --secondary-color: #000000;
+    --tertiary-color: #6fa7a9;
+    --lightest-font-color: #fff;
+    --focus-red-color: red;
+    --animation-sun-start: #edc655;
+    --animation-sun-mid: #fcffad;
+    --animation-sun-end: #f76414;
+    --bodyfontsize: 22px;
+    --padding-margin-px:17px;
+    --padding-margin-px-lg: 20px;
+    --font-weight-700px: 700px;
+    --max-width-700px: 700px;
+}
+
+a {
+    color: var(--secondary-color);
+    transition: transform 0.2s ease;
+}
+
+/* a:visited {
+    visited link -I'm turning this off so that my button text color doesn't change
+    color: inherit;
+} */
+
+a:hover,
+a:focus {
+    /* No underlining when hovering over a link */
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+a:active {
+    /* selected link */
+    color: var(--tertiary-color);
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'EB Garamond', serif;
+    font-weight: 500px;
+    font-size:var(--bodyfontsize);
+    line-height: 1.5;
+    text-align:justify;
+    color: var(--secondary-color);
+}
+
+img {
+    border: var(--secondary-color);
+    border-width: 2px;
+    border-style:solid;
+    border-radius: 5px;
+}
+
+.img__footersmlogo {
+    transition: transform 0.2s ease;
+    margin: 2px;
+}
+
+.img__footersmlogo:hover, .img__footersmlogo:focus {
+    transform: scale(1.1);
+}
+
+.img__favicon {
+    position: fixed; /* Fixes favicon icon in one place and it stays there when scrolling */
+}
+
+.img__profileportrait {
+    float: left; /* allows you to wrap and control the flow of other inline elements around the target element? */
+    margin-right: 30px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.img__footersmlogo {
+    width: 40x; /* Size of the footer social media logos */
+    border: none;
+}
+
+.animation-image {
+    max-width:var(--max-width-700px);
+    clear: both;
+    display: flex; /* starts a flexbox in the parent container and have it applied to all its children? */
+    margin: 0 auto; /* Centers the footer */
+    text-align: center; /* Centers the footer */
+}
+
+.img__ggbsvg {
+    border: none;
+}
+
+h1 {
+    font-size: 46px;
+    font-weight:var(--font-weight-700px);
+    line-height: 1;
+    font-style: bold;
+}
+
+h2  {
+    font-size: 28px;
+    font-weight:var(--font-weight-700px);
+    line-height: 1.5;
+    font-style: bold;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight:var(--font-weight-700px);
+    line-height: 1;
+    font-style: bold;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight:bold;
+    line-height: 0;
+}
+
+p {
+    color: var(--secondary-color);
+    font-size:var(--bodyfontsize);
+    line-height: 1.5;
+    font-style: normal;
+}
+
+button, 
+.button, 
+.button__secondary {
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    /* takes the font from the outer container */
+    display: inline-block;
+    /* takes the font from te outer container */
+    font-family: inherit;
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    /*adds spacing to the button (this will be discussed more in-depth later) */
+    padding:var(--padding-margin-px);
+    border-radius: 10px; /* Curves the image (button) to be more visually appealing (a value of 50% will make it a circle */
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    /* longhand 
+    transition-duration: .5s;
+    transition-property: opacity; */
+    /* shorthand */
+    transition: color .7s transform 0.2s ease;
+    margin: 2px;
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacty of the button to 80% */
+    background-color:var(--tertiary-color);
+    color:var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.button__secondary {
+    background-color:var(--tertiary-color);
+    color:var(--secondary-color);
+}
+
+.button__secondary:hover, .button__secondary:focus {
+    cursor: pointer;
+    /* reduces the opacty of the button to 80% */
+    background-color:var(--secondary-color);
+    color:var(--lightest-font-color);
+}
+
+button:active {
+    background-color:var(--primary-color);
+}
+
+button:focus {
+    border: 2px solid var(--focus-red-color);
+}
+
+html {
+    padding:var(--padding-margin-px); /* Adds a 17px inner spacing to all sides*/
+    margin:var(--padding-margin-px); /* Adds a 17px outer spacing to all sides*/
+    border: 5px solid var(--secondary-color); /* Attributes describe: thickness, type, color*/
+    border-radius: 25px;
+}
+
+.about-me-skills {
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+table, th, td {
+    padding:15px; /* Adds a 15px inner spacing to all sides*/
+    margin: 5px; /* Adds a 5px outer spacing to all sides*/
+    border: 2px solid var(--secondary-color); /* Attributes describe: thickness, type, color*/
+    border-collapse: collapse;
+}
+
+table {
+    display: inline-table;
+    font-size: var(--bodyfontsize);
+}
+
+thead {
+    font-weight: bold;
+    background-color: var(--tertiary-color);
+}
+
+span {
+    color:var(--secondary-color);
+    background-color: var(--tertiary-color);
+    padding: 5px; /* Adds a 7px inner spacing to all sides*/
+    margin: 1px; /* Adds a 1px outer spacing to all sides*/
+    border: 1px solid var(--tertiary-color); /* Attributes describe: thickness, type, color*/
+    border-radius: 20px;
+}
+
+.fixed {
+    position: fixed; /* Determines where (bottom right corner) the favicon icon is fixed */
+    margin:var(--padding-margin-px-lg);
+    padding:var(--padding-margin-px-lg);
+    bottom:var(--padding-margin-px-lg);
+    right:var(--padding-margin-px-lg);
+}
+
+.profile {
+    max-width:var(--max-width-700px);
+    margin: 0 auto; /* Centers */
+    padding:4vmax
+}
+
+.page-footer {
+    clear: both;
+    display: flex; /* starts a flexbox in the parent container and have it applied to all its children? */
+    margin: 0 auto; /* Centers the footer */
+    flex-direction: column; /* Puts the items in a column */
+    text-align: center; /* Centers the footer */
+}
+
+.page-header {
+    display: flex;
+    max-width: 100%;
+    padding:var(--padding-margin-px-lg);
+    margin: auto;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.page-header__item {
+    width: 200px;
+    height: 70px;
+    flex: 0 1 200px;
+}    
+
+.page-header__item:nth-child(2) {
+    padding-left:var(--padding-margin-px-lg); /* Gives the second child with class page-header__item some padding on its left so it isn't touching the image */
+}
+
+.page-header .page-header__item:last-child {
+    flex-grow: 1;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box; /* Puts everything on the pages into the border box. Sets the width value for every element to include their padding and border values. */
+}
+
+.navigation-list {
+    list-style-type: none; /* Removes the bullet points */
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.navigation-list li {
+    display: inline-block; /* Makes each item in the list appear in a line rather than on top of each other */
+    margin-left: 40px;
+}
+
+.navigation-list__item--active {
+    text-decoration: none;
+}
+
+/* Responsive adjustments for the navigation bar */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page-header__item {
+        flex: 0 0 auto; /* Adjust items to not grow or shrink */
+        width: auto; /* Adjust width for mobile */
+        margin-top:var(--padding-margin-px); /* Add some space between logo/name and navigation */
+    }
+
+    .navigation-list {
+        text-align: center;
+    }
+
+    .navigation-list li {
+        display: block; /* Stack the navigation items vertically */
+        margin-left: 0; /* Remove the left margin */
+        margin-bottom:var(--padding-margin-px); /* Add some space between items */
+    }
+
+    .navigation-list__item--active,
+    .navigation-list__item {
+        display: block; /* Ensure links also stack vertically */
+    }
+}
+
+/* start grid fallback */
+.grid__item {
+    display: inline-block;
+    width: 33%;
+}
+/* end grid fallback */
+
+@supports (display: grid) {
+    .grid {
+        display: grid; /* Adds a grid with three columns and three rows of equal size for each grid item */
+        /* grid-template-columns: 300px 300px 300px; --> It’s considered good practice to specify only one property, and this property is usually the columns property. This means the rows property defaults to auto, and that the grid should still work even if the row with the property grid-template-rows is deleted */
+        grid-template-columns: 1fr 1fr 1fr; /* Fr is a flex unit used to allocate available space to grid items. Instead of using 300px, for example, you can use 1fr for each value because each grid item should be the same size. If you wanted a column to take up twice the size of the other columns, however, you’d pass on the value 2f */
+        grid-gap: 20px; /* Adds spacing between each grid item */
+        margin: 0;
+    }
+    
+    .grid__item {
+        background-color:var(--tertiary-color); /* Adds a background color to each grid item */
+        width: auto; /* This is to ensure that the power of the new layout grid can still be used in modern browsers. It also automatically takes the width from the defined grid container. */
+        min-height: auto;
+        margin: 0;
+        padding:var(--padding-margin-px-lg);
+        border-radius: 10px; /* Rounds the edges of the grid items */
+        text-align: left; /* overwrites the earlier text-align: justify (for the rest of the site) for the text in the grid */
+        transition: transform 0.2s ease;
+    }
+    .grid__item:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+    
+    .grid__item:last-child {
+        /* grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3; 
+        OR you can do it this way below */
+        grid-column: 3/3;
+        grid-row: 1/3;
+    }
+}
+
+.grid-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin: 0 24px 0;
+    background-color:var(--tertiary-color);
+    padding: 70px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.grid-contact__item {
+    font-size: 23px;
+}
+
+@media all and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .grid-contact {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    body {
+        font-size: 14px;
+    }
+    table {
+        font-size: 14px;
+    }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media all and (max-width: 750px) {
+    .grid {
+        grid-gap: 10px;
+    }
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: 22px;
+    }
+}
+
+.about-me__container {
+    display: flex;
+    flex-flow: column wrap;
+    max-width:var(--max-width-700px);
+    justify-content: center;
+    padding:var(--padding-margin-px-lg);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-me__list {
+    text-align: center;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.work__container {
+    padding:var(--padding-margin-px-lg);
+    text-align: center;
+}
+
+.contact__container {
+    padding:var(--padding-margin-px-lg);
+    text-align: center;
+}
+
+@keyframes color-change {
+    0% {
+        fill:var(--animation-sun-start);
+    }
+    50% {
+        fill:var(--animation-sun-mid);
+    }
+    100% {
+        fill:var(--animation-sun-end);
+    }
+}
+
+.Sun {
+    animation: 15s color-change infinite alternate linear;
+    /* animation-name: color-change;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear; */
+}
+
+@keyframes bird-move-reverse {
+    0% {
+        transform: translate(30px, -30px);
+    }
+    50% {
+        transform: translate(-50px, 40px);
+    }
+    100% {
+        transform: translate(-140px, -30px);
+    }
+}
+
+.Bird {
+    animation: 15s bird-move-reverse infinite alternate linear;
+}
+
+@keyframes boat1-move-reverse {
+    0% {
+        transform: translate(210px, 0);
+    }
+    100% {
+        transform: translate(-350px, 0);
+    }
+}
+
+.Boat1 {
+    /* animation: 4s boat1-move-reverse infinite alternate linear;  */
+    animation-name: boat1-move-reverse;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+@keyframes boat2-move {
+    0% {
+        transform: translate(-360px, 0);
+    }
+    100% {
+        transform: translate(290px, 0);
+    }
+}
+
+.Boat2 {
+    animation-name: boat2-move;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+.animation__attribution {
+    display: flex;
+    flex-flow: column wrap;
+    max-width:var(--max-width-700px);
+    margin: 0 auto;
+    text-align: center;
+}
