@@ -1,6 +1,4 @@
-let pokemonList = [];
-
-let pokemons = [
+let pokemonList = [
   {
     name: 'Venusaur',
     height: 2,
@@ -63,10 +61,36 @@ let pokemon4 =
 }
 
 
-for (let i = 0; i < pokemons.length; i++) {
-  if (pokemons[i].height > 1.9) {
-    document.write('<p>' + pokemons[i].name + ' (height: ' + (pokemons[i].height) + 'm) - Wow, that\'s big!</p>');
-  } else if (pokemons[i].height < 1.9 ){
-      document.write('<p>' + pokemons[i].name + ' (height: ' + (pokemons[i].height) + 'm)</p>');
+// for (let i = 0; i < pokemons.length; i++) {
+//   if (pokemons[i].height > 1.9) {
+//     document.write('<p>' + pokemons[i].name + ' (height: ' + (pokemons[i].height) + 'm) - Wow, that\'s big!</p>');
+//   } else if (pokemons[i].height < 1.9 ){
+//       document.write('<p>' + pokemons[i].name + ' (height: ' + (pokemons[i].height) + 'm)</p>');
+// }
+// }
+
+function print(){  
+  for (let i = 0; i < pokemonList.length; i++) {
+    if (pokemonList[i].height > 1.9) {
+    document.write('<p>' + pokemonList[i].name + ' (height: ' + (pokemonList[i].height) + 'm) - Wow, that\'s big!</p>');
+    } else if (pokemonList[i].height < 1.9 ){
+      document.write('<p>' + pokemonList[i].name + ' (height: ' + (pokemonList[i].height) + 'm)</p>');
+};
 }
 }
+
+print();
+
+// function div(dividend, divisor){
+//   if (divisor === 0) {
+//     return 'You\'re trying to divide by zero.';
+//   }else{
+//     let result = dividend / divisor;
+//     return result;
+//   }
+// }
+
+// console.log(div(4, 2));
+// console.log(div(7, 0));
+// console.log(div(1, 4));
+// console.log(div(12, -3));
