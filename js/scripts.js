@@ -80,17 +80,3 @@ function print(){
 }
 
 print();
-
-// function div(dividend, divisor){
-//   if (divisor === 0) {
-//     return 'You\'re trying to divide by zero.';
-//   }else{
-//     let result = dividend / divisor;
-//     return result;
-//   }
-// }
-
-// console.log(div(4, 2));
-// console.log(div(7, 0));
-// console.log(div(1, 4));
-// console.log(div(12, -3));
