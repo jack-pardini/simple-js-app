@@ -80,3 +80,51 @@ function print(){
 }
 
 print();
+
+
+
+let pokemonRepository = (function () {
+  let pokemonList = [
+    {
+      name: 'Venusaur',
+      height: 2,
+      abilities: ['Chlorophyll', 'Overgrow'],
+      type: ['Grass', 'Poison']
+    },
+  
+    {
+      name: 'Charizard',
+      height: 1.7,
+      abilities: ['Blaze', 'Solar-power'],
+      type: ['Fire', 'Flying']
+    },
+  
+    {
+      name: 'Blastoise',
+      height: 1.6,
+      abilities: ['Rain-dish', 'Torrent'],
+      type: 'Water'
+    },
+  
+    {
+      name: 'Pikachu',
+      height: 0.4,
+      abilities: ['Static', 'Lightningrod'],
+      type: 'Electric'
+    }
+  ]
+
+  function getAll () {
+    return pokemonList;
+  }
+  function add (pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  return {
+    getAll: getAll,
+    add: add
+  }
+})()
+
+console.log(pokemonRepository.getAll())
