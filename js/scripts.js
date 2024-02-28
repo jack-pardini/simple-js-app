@@ -69,20 +69,21 @@ let pokemon4 =
 // }
 // }
 
-function print(){  
-  for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height > 1.9) {
-    document.write('<p>' + pokemonList[i].name + ' (height: ' + (pokemonList[i].height) + 'm) - Wow, that\'s big!</p>');
-    } else if (pokemonList[i].height < 1.9 ){
-      document.write('<p>' + pokemonList[i].name + ' (height: ' + (pokemonList[i].height) + 'm)</p>');
-};
-}
-}
 
-print();
+// function print(){  
+//   for (let i = 0; i < pokemonList.length; i++) {
+//     if (pokemonList[i].height > 1.9) {
+//     document.write('<p>' + pokemonList[i].name + ' (height: ' + (pokemonList[i].height) + 'm) - Wow, that\'s big!</p>');
+//     } else if (pokemonList[i].height < 1.9 ){
+//       document.write('<p>' + pokemonList[i].name + ' (height: ' + (pokemonList[i].height) + 'm)</p>');
+// };
+// }
+// }
+
+// print();
 
 
-
+// IIFE
 let pokemonRepository = (function () {
   let pokemonList = [
     {
@@ -128,3 +129,13 @@ let pokemonRepository = (function () {
 })()
 
 console.log(pokemonRepository.getAll())
+
+
+// internal anonymous function - I know this is wrong as it doesn't work but I don't know what I did wrong
+pokemonList.forEach(function() {
+  if (pokemonList.height > 1.9) {
+    document.write('<p>' + pokemonList.name + ' (height: ' + (pokemonList.height) + 'm) - Wow, that\'s big!</p>');
+  } else if (pokemonList.height < 1.9) {
+    document.write('<p>' + pokemonList.name + ' (height: ' + (pokemonList.height) + 'm)</p>');
+  };
+});
