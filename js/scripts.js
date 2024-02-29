@@ -1,5 +1,5 @@
 // IIFE
-var pokemonRepository = (function () {
+let pokemonRepository = (function () {
   let repository = [
     {
       name: 'Venusaur',
@@ -47,20 +47,33 @@ var pokemonRepository = (function () {
     return repository;
   }
 
+  // I know this is wrong because it doesn't log anything to the console but I don't know how to do this - please help
+  function showDetails(pokemon) {
+    let repository = document.querySelector('.pokemon-list');
+    repository.showDetails(pokemon);
+    console.log(pokemon.name);
+  }
+
+  // Because of whatever I did wrong above with showDetails, this also doesn't work
   function addListItem(pokemon) {
-    let pokemonList = document.querySelector('.pokemon-list');
-    let listpokemon = document.createElement('li');
+    let repository = document.querySelector('.pokemon-list');
+    let pokemonListItem = document.createElement('li');
+    
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('button-class');
-    listpokemon.appendChild(button);
-    pokemonList.appendChild(listpokemon);
+    pokemonListItem.appendChild(button);
+    repository.appendChild(pokemonListItem);
+    button.addEventListener('click', function() {
+      showDetails(pokemon);
+    })
   }
 
   return {
     getAll: getAll,
     add: add,
-    addListItem: addListItem
+    addListItem: addListItem,
+    showDetails: showDetails
   };
 })();
 
@@ -68,7 +81,6 @@ console.log(pokemonRepository.getAll());
 
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
-
 });
 
 //   var result;
@@ -82,69 +94,6 @@ pokemonRepository.getAll().forEach(function (pokemon) {
 //     } else if (typeItem == 'Electric') {
 //       result = '<span style="color:yellow;"> ';
 //     }
-// }
-
-
-// let pokemonList = [
-//   {
-//     name: 'Venusaur',
-//     height: 2,
-//     abilities: ['Chlorophyll', 'Overgrow'],
-//     type: ['Grass', 'Poison']
-//   },
-
-//   {
-//     name: 'Charizard',
-//     height: 1.7,
-//     abilities: ['Blaze', 'Solar-power'],
-//     type: ['Fire', 'Flying']
-//   },
-
-//   {
-//     name: 'Blastoise',
-//     height: 1.6,
-//     abilities: ['Rain-dish', 'Torrent'],
-//     type: 'Water'
-//   },
-
-//   {
-//     name: 'Pikachu',
-//     height: 0.4,
-//     abilities: ['Static', 'Lightningrod'],
-//     type: 'Electric'
-//   }
-// ];
-
-// let pokemon1 =
-// {
-//   name: 'Venusaur',
-//   height: 2,
-//   abilities: ['Chlorophyll', 'Overgrow'],
-//   type: ['Grass', 'Poison']
-// };
-
-// let pokemon2 =
-// {
-//   name: 'Charizard',
-//   height: 1.7,
-//   abilities: ['Blaze', 'Solar-power'],
-//   type: ['Fire', 'Flying']
-// };
-
-// let pokemon3 =
-// {
-//   name: 'Blastoise',
-//   height: 1.6,
-//   abilities: ['Rain-dish', 'Torrent'],
-//   type: 'Water'
-// };
-
-// let pokemon4 =
-// {
-//   name: 'Pikachu',
-//   height: 0.4,
-//   abilities: ['Static', 'Lightningrod'],
-//   type: 'Electric'
 // }
 
 
