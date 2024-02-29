@@ -10,7 +10,7 @@ Tertiary Color - Secondary Button and Grid (mid grayish blue): #5F9EA0
  :root {
     --primary-color: #ffe559;
     --secondary-color: #000000;
-    --tertiary-color: #6fa7a9;
+    --tertiary-color: red;
     --lightest-font-color: #fff;
     --focus-red-color: red;
     --animation-sun-start: #edc655;
@@ -135,6 +135,7 @@ p {
 
 button, 
 .button, 
+.button-class,
 .button__secondary {
     /* overwrites browser defaults and resets the border */
     border: none;
@@ -156,7 +157,7 @@ button,
     transition-property: opacity; */
     /* shorthand */
     transition: color .7s transform 0.2s ease;
-    margin: 2px;
+    margin: 5px;
 }
 
 button:hover, button:focus, .button:hover, .button:focus {
@@ -193,12 +194,6 @@ html {
     margin:var(--padding-margin-px); /* Adds a 17px outer spacing to all sides*/
     border: 5px solid var(--secondary-color); /* Attributes describe: thickness, type, color*/
     border-radius: 25px;
-}
-
-.about-me-skills {
-    margin: auto;
-    justify-content: center;
-    text-align: center;
 }
 
 table, th, td {
@@ -517,4 +512,9 @@ span {
     max-width:var(--max-width-700px);
     margin: 0 auto;
     text-align: center;
+}
+
+.pokemon-list {
+    text-decoration: none;
+    list-style-type: none; /* Removes the bullet points */
 }

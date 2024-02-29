@@ -1,6 +1,6 @@
 // IIFE
-let pokemonRepository = (function () {
-  let pokemonList = [
+var pokemonRepository = (function () {
+  let repository = [
     {
       name: 'Venusaur',
       height: 2,
@@ -30,85 +30,122 @@ let pokemonRepository = (function () {
     }
   ]
 
-  function getAll () {
-    return pokemonList;
+  function add(pokemon) {
+    if (
+      typeof pokemon === 'object' &&
+      'name' in pokemon &&
+      'height' in pokemon &&
+      'type' in pokemon
+    ) {
+      repository.push(pokemon);
+    } else {
+      console.log('pokemon is not correct');
+    }
   }
-  function add (pokemon) {
-    pokemonList.push(pokemon);
+
+  function getAll () {
+    return repository;
+  }
+
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listpokemon = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('button-class');
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
   }
 
   return {
     getAll: getAll,
-    add: add
-  }
-})()
+    add: add,
+    addListItem: addListItem
+  };
+})();
 
-console.log(pokemonRepository.getAll())
+console.log(pokemonRepository.getAll());
+
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+
+});
+
+//   var result;
+//   item.types.forEach(function (typeItem) {
+//     if (typeItem == 'Grass') {
+//       result = '<span style="color:green;"> ';
+//     } else if (typeItem == 'Fire') {
+//       result = '<span style="color:red;"> ';
+//     } else if (typeItem == 'Water') {
+//       result = '<span style="color:blue;"> ';  
+//     } else if (typeItem == 'Electric') {
+//       result = '<span style="color:yellow;"> ';
+//     }
+// }
 
 
+// let pokemonList = [
+//   {
+//     name: 'Venusaur',
+//     height: 2,
+//     abilities: ['Chlorophyll', 'Overgrow'],
+//     type: ['Grass', 'Poison']
+//   },
 
+//   {
+//     name: 'Charizard',
+//     height: 1.7,
+//     abilities: ['Blaze', 'Solar-power'],
+//     type: ['Fire', 'Flying']
+//   },
 
-let pokemonList = [
-  {
-    name: 'Venusaur',
-    height: 2,
-    abilities: ['Chlorophyll', 'Overgrow'],
-    type: ['Grass', 'Poison']
-  },
+//   {
+//     name: 'Blastoise',
+//     height: 1.6,
+//     abilities: ['Rain-dish', 'Torrent'],
+//     type: 'Water'
+//   },
 
-  {
-    name: 'Charizard',
-    height: 1.7,
-    abilities: ['Blaze', 'Solar-power'],
-    type: ['Fire', 'Flying']
-  },
+//   {
+//     name: 'Pikachu',
+//     height: 0.4,
+//     abilities: ['Static', 'Lightningrod'],
+//     type: 'Electric'
+//   }
+// ];
 
-  {
-    name: 'Blastoise',
-    height: 1.6,
-    abilities: ['Rain-dish', 'Torrent'],
-    type: 'Water'
-  },
+// let pokemon1 =
+// {
+//   name: 'Venusaur',
+//   height: 2,
+//   abilities: ['Chlorophyll', 'Overgrow'],
+//   type: ['Grass', 'Poison']
+// };
 
-  {
-    name: 'Pikachu',
-    height: 0.4,
-    abilities: ['Static', 'Lightningrod'],
-    type: 'Electric'
-  }
-];
+// let pokemon2 =
+// {
+//   name: 'Charizard',
+//   height: 1.7,
+//   abilities: ['Blaze', 'Solar-power'],
+//   type: ['Fire', 'Flying']
+// };
 
-let pokemon1 =
-{
-  name: 'Venusaur',
-  height: 2,
-  abilities: ['Chlorophyll', 'Overgrow'],
-  type: ['Grass', 'Poison']
-};
+// let pokemon3 =
+// {
+//   name: 'Blastoise',
+//   height: 1.6,
+//   abilities: ['Rain-dish', 'Torrent'],
+//   type: 'Water'
+// };
 
-let pokemon2 =
-{
-  name: 'Charizard',
-  height: 1.7,
-  abilities: ['Blaze', 'Solar-power'],
-  type: ['Fire', 'Flying']
-};
-
-let pokemon3 =
-{
-  name: 'Blastoise',
-  height: 1.6,
-  abilities: ['Rain-dish', 'Torrent'],
-  type: 'Water'
-};
-
-let pokemon4 =
-{
-  name: 'Pikachu',
-  height: 0.4,
-  abilities: ['Static', 'Lightningrod'],
-  type: 'Electric'
-}
+// let pokemon4 =
+// {
+//   name: 'Pikachu',
+//   height: 0.4,
+//   abilities: ['Static', 'Lightningrod'],
+//   type: 'Electric'
+// }
 
 
 // for (let i = 0; i < pokemons.length; i++) {
@@ -131,15 +168,3 @@ let pokemon4 =
 // }
 
 // print();
-
-
-// internal anonymous function - I know this is wrong as it doesn't work but I don't know what I did wrong
-pokemonList.forEach(function() {
-  if (pokemonList.height > 1.9) {
-    document.write('<p>' + pokemonList.name + ' (height: ' + (pokemonList.height) + 'm) - Wow, that\'s big!</p>');
-  } else if (pokemonList.height < 1.9) {
-    document.write('<p>' + pokemonList.name + ' (height: ' + (pokemonList.height) + 'm)</p>');
-  };
-});
-
-
