@@ -47,14 +47,19 @@ let pokemonRepository = (function () {
     return repository;
   }
 
-  // I know this is wrong because it doesn't log anything to the console but I don't know how to do this - please help
   function showDetails(pokemon) {
-    let repository = document.querySelector('.pokemon-list');
-    repository.showDetails(pokemon);
-    console.log(pokemon.name);
+    console.log(`${pokemon.name} (Height: ${pokemon.height}, Type: ${pokemon.type.join(', ')}, Abilities: ${pokemon.abilities.join(', ')})`);
   }
 
-  // Because of whatever I did wrong above with showDetails, this also doesn't work
+  // function showDetails(pokemon) {
+  //   if (
+  //     typeof pokemon === 'object') {
+  //       console.log(`${pokemon.name} (Height: ${pokemon.height}, Type: ${pokemon.type(', ')}, Abilities: ${pokemon.abilities.join(', ')})`);
+  //   } else {
+  //       console.log(`${pokemon.name} (Height: ${pokemon.height}, Type: ${pokemon.type.join(', ')}, Abilities: ${pokemon.abilities.join(', ')})`);
+  //   }    
+  // }
+
   function addListItem(pokemon) {
     let repository = document.querySelector('.pokemon-list');
     let pokemonListItem = document.createElement('li');
