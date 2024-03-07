@@ -31,6 +31,8 @@ let pokemonRepository = (function () {
     repository.appendChild(pokemonListItem);
     button.addEventListener('click', function() {
       showDetails(pokemon);
+      showModal('Modal title', 'This is the modal content!');
+
     })
   }
 
@@ -51,59 +53,6 @@ let pokemonRepository = (function () {
       console.error(e);
     })
   }
-
-  // Function to fetch and load details for a specific pokemon
-  function loadDetails(item) {
-    let url = item.detailsUrl;
-    return fetch(url).then(function (response) {
-      return response.json();
-    }).then(function (details) {
-      // Now we add the details to the item
-      item.imageUrl = details.sprites.front_default;
-      item.height = details.height;
-      item.types = details.types;
-    }).catch(function (e) {
-      console.error(e);
-    });
-  }
-
-  // Function to show details of a pokemon
-  function showDetails(pokemon) {
-    loadDetails(pokemon).then(function () {
-      console.log(pokemon);
-    });
-  }
-
-  return {
-    getAll: getAll,
-    add: add,
-    addListItem: addListItem,
-    loadList: loadList,
-    loadDetails: loadDetails,
-    showDetails: showDetails
-  };
-})();
-
-// Fetch and load the pokemon list, then create list items for each pokemon
-pokemonRepository.loadList().then(function() {
-  pokemonRepository.getAll().forEach(function (pokemon) {
-    pokemonRepository.addListItem(pokemon);
-  });
-});
-
-fetch('https://pokeapi.co/api/v2/pokemon/').then(function (response) {
-  return response.json(); // This returns a promise!
-}).then(function (repository) {
-  console.log(repository); // The actual JSON response
-}).catch(function () {
-  // Error
-});
-
-
-
-
-
-(function(){
 
   function showModal(title, text) {
     let modalContainer = document.querySelector('#modal-container');
@@ -148,6 +97,58 @@ fetch('https://pokeapi.co/api/v2/pokemon/').then(function (response) {
     modalContainer.classList.remove('is-visible');
   }
 
+  // Function to fetch and load details for a specific pokemon
+  function loadDetails(item) {
+    let url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      // Now we add the details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
+
+  // Function to show details of a pokemon
+  function showDetails(pokemon) {
+    loadDetails(pokemon).then(function () {
+      showModal(pokemon);
+    });
+  }
+
+  return {
+    getAll: getAll,
+    add: add,
+    addListItem: addListItem,
+    loadList: loadList,
+    loadDetails: loadDetails,
+    showDetails: showDetails
+  };
+})();
+
+// Fetch and load the pokemon list, then create list items for each pokemon
+pokemonRepository.loadList().then(function() {
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
+});
+
+fetch('https://pokeapi.co/api/v2/pokemon/').then(function (response) {
+  return response.json(); // This returns a promise!
+}).then(function (repository) {
+  console.log(repository); // The actual JSON response
+}).catch(function () {
+  // Error
+});
+
+
+
+
+
+(function(){
   window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('#modal-container');
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
@@ -155,11 +156,9 @@ fetch('https://pokeapi.co/api/v2/pokemon/').then(function (response) {
     }
   });
   
-  document.querySelector('.pokemon').addEventListener('click', () => {
+  document.querySelector('.button-class').addEventListener('click', () => {
     showModal('Modal title', 'This is the modal content!');
   });
-
-  // The return statement here
 })();
 
 
