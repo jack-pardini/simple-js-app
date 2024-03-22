@@ -112,10 +112,15 @@ let pokemonRepository = (function () {
     });
   }
 
+  function capitalize(pokemon) {
+    return word[0].toUpperCase() + word.slice(1);
+  }
+
   // Function to show details of a pokemon
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      showModal(pokemon);
+      console.log(pokemon);
+      showModal(pokemon.name.toUpperCase(), pokemon.imageUrl);
     });
   }
 
