@@ -1,13 +1,10 @@
 :root {
-    --primary-color: #ffe559;
+    --primary-color: #3CB371;
     --secondary-color: #000000;
-    --tertiary-color: red;
+    --tertiary-color: #F08080;
     --lightest-font-color: #fff;
-    --focus-red-color: red;
-    --animation-sun-start: #edc655;
-    --animation-sun-mid: #fcffad;
-    --animation-sun-end: #f76414;
-    --bodyfontsize: 22px;
+    --focus-red-color: #CD5C5C;
+    --bodyfontsize: 35px;
     --padding-margin-px:17px;
     --padding-margin-px-lg: 20px;
     --font-weight-700px: 700px;
@@ -186,6 +183,7 @@ html {
 .pokemon-list {
     text-decoration: none;
     list-style-type: none; /* Removes the bullet points */
+    /* add CSS to sit next to each other */
 }
 
 #modal-container {
@@ -217,7 +215,7 @@ html {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
-  background: lightgoldenrodyellow;
+  background: #66CDAA;
   padding: 15px;
   width: 100%;
   max-width: 700px;
@@ -240,4 +238,10 @@ html {
 
 .modal p {
   margin-bottom: 0;
+}
+
+.pokemon-image {
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
 }

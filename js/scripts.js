@@ -25,13 +25,12 @@ let pokemonRepository = (function () {
     let pokemonListItem = document.createElement('li');
     
     let button = document.createElement('button');
-    button.innerText = pokemon.name;
+    button.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
     button.classList.add('button-class');
     pokemonListItem.appendChild(button);
     repository.appendChild(pokemonListItem);
     button.addEventListener('click', function() {
       showDetails(pokemon);
-      showModal('Modal title', 'This is the modal content!');
 
     })
   }
@@ -83,6 +82,7 @@ let pokemonRepository = (function () {
 
     let img = document.createElement('img');
     img.src = imageUrl;
+    img.classList.add('pokemon-image');
     
     modal.appendChild(closeButtonElement);
     modal.appendChild(img); 
@@ -129,7 +129,7 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       console.log(pokemon);
-      showModal(pokemon.name, pokemon.imageUrl, pokemon.height + ' dm', pokemon.weight + ' kg', pokemon.abilities);
+      showModal(pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1), pokemon.imageUrl, 'Height: ' + pokemon.height + ' dm', 'Weight: ' + pokemon.weight + ' kg', pokemon.abilities);
     });
   }
 
@@ -158,15 +158,12 @@ fetch('https://pokeapi.co/api/v2/pokemon/').then(function (response) {
   // Error
 });
 
-
-
-
-
 (function(){
   window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('#modal-container');
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-      hideModal();
+      let modalContainer = document.querySelector('#modal-container');
+      modalContainer.classList.remove('is-visible');
     }
   });
   
