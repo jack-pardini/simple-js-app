@@ -54,7 +54,7 @@ let pokemonRepository = (function () {
     })
   }
 
-  function showModal(title, text) {
+  function showModal(title, imageUrl, heighttext, weighttext, abilitiestext) {
     let modalContainer = document.querySelector('#modal-container');
   
     // Clear all existing modal content
@@ -72,12 +72,24 @@ let pokemonRepository = (function () {
     let titleElement = document.createElement('h1');
     titleElement.innerText = title;
   
-    let contentElement = document.createElement('p');
-    contentElement.innerText = text;
-  
+    let heightElement = document.createElement('p');
+    heightElement.innerText = heighttext;
+
+    let weightElement = document.createElement('p');
+    weightElement.innerText = weighttext;
+
+    let abilitiesElement = document.createElement('p');
+    abilitiesElement.innerText = abilitiestext;
+
+    let img = document.createElement('img');
+    img.src = imageUrl;
+    
     modal.appendChild(closeButtonElement);
+    modal.appendChild(img); 
     modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
+    modal.appendChild(heightElement);
+    modal.appendChild(weightElement);
+    modal.appendChild(abilitiesElement);
     modalContainer.appendChild(modal);
   
     modalContainer.classList.add('is-visible');
@@ -106,7 +118,8 @@ let pokemonRepository = (function () {
       // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
-      item.types = details.types;
+      item.weight = details.weight;
+      item.abilities = details.abilities;
     }).catch(function (e) {
       console.error(e);
     });
@@ -116,7 +129,7 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       console.log(pokemon);
-      showModal(pokemon.name.toUpperCase(), pokemon.height + ' dm');
+      showModal(pokemon.name, pokemon.imageUrl, pokemon.height + ' dm', pokemon.weight + ' kg', pokemon.abilities);
     });
   }
 
