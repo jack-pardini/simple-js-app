@@ -101,7 +101,7 @@ button,
     text-decoration: none;
     /*adds spacing to the button (this will be discussed more in-depth later) */
     padding:var(--padding-margin-px);
-    border-radius: 10px; /* Curves the image (button) to be more visually appealing (a value of 50% will make it a circle */
+    border-radius: 15px; /* Curves the image (button) to be more visually appealing (a value of 50% will make it a circle */
     /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
     border-bottom: 2px solid rgba(0, 0, 0, 0.3);
     /* longhand 
@@ -109,10 +109,12 @@ button,
     transition-property: opacity; */
     /* shorthand */
     transition: color .7s transform 0.2s ease;
-    margin: 10px;
+    margin: 12px;
     width: 100%;
     table-layout: fixed;
     font-size: 20px;
+    padding: 1rem .75rem;
+    border-width: 6px;
 }
 
 button:hover, button:focus, .button:hover, .button:focus, button__secondary:hover, button__secondary:focus, .button__secondary:hover, .button__secondary:focus {
@@ -125,8 +127,7 @@ button:hover, button:focus, .button:hover, .button:focus, button__secondary:hove
 }
 
 .button__secondary {
-    background-color:var(--tertiary-color);
-    color:var(--secondary-color);
+    background-color:var(--secondary-color);
     font-family: inherit;
     padding:var(--padding-margin-px);
     border-radius: 10px; /* Curves the image (button) to be more visually appealing (a value of 50% will make it a circle */
@@ -204,14 +205,15 @@ html {
     text-decoration: none;
     list-style-type: none; /* Removes the bullet points */
     /* add CSS to sit next to each other */
+    display:contents;
 }
 
 #modal-container {
-  display: none;
+  display:none;
 }
 
 #modal-container.is-visible {
-  position: fixed;
+  position:fixed;
   padding: 20px;
   box-sizing: border-box;
   top: 0;
@@ -236,22 +238,20 @@ html {
   display: inline-block;
   box-sizing: border-box;
   background: #B0E0E6;
-  padding: 15px;
+  padding: 35px;
   width: 100%;
   max-width: 700px;
-  text-align: center;
+  text-align:center;
   border-radius: 20px;
 }
 
 .modal-close {
-  float: right;
+  float:right;
   /* -webkit-appearance: none; */
   border: 0;
   background: none;
-  color: #777;
-  text-decoration: underline;
   background-color:var(--tertiary-color);
-  color:var(--secondary-color);
+  color:var(--dark-font-color);
   font-family: inherit;
   padding:10px;
   border-radius: 10px; /* Curves the image (button) to be more visually appealing (a value of 50% will make it a circle */
@@ -276,8 +276,9 @@ html {
 
 .pokemon-image {
     height: 150px;
-    width: 150px;
+    max-width: 150px;
     margin: 0 auto;
+    vertical-align:middle;
 }
 
 
