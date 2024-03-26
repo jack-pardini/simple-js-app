@@ -115,7 +115,7 @@ button,
     font-size: 20px;
 }
 
-button:hover, button:focus, .button:hover, .button:focus {
+button:hover, button:focus, .button:hover, .button:focus, button__secondary:hover, button__secondary:focus, .button__secondary:hover, .button__secondary:focus {
     /* lets the mouse appear as a hand when hovering over the button */
     cursor: pointer;
     /* reduces the opacty of the button to 80% */
@@ -127,6 +127,20 @@ button:hover, button:focus, .button:hover, .button:focus {
 .button__secondary {
     background-color:var(--tertiary-color);
     color:var(--secondary-color);
+    font-family: inherit;
+    padding:var(--padding-margin-px);
+    border-radius: 10px; /* Curves the image (button) to be more visually appealing (a value of 50% will make it a circle */
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    /* longhand 
+    transition-duration: .5s;
+    transition-property: opacity; */
+    /* shorthand */
+    transition: color .7s transform 0.2s ease;
+    margin: 10px;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 20px;
 }
 
 .button__secondary:hover, .button__secondary:focus {
@@ -236,6 +250,20 @@ html {
   background: none;
   color: #777;
   text-decoration: underline;
+  background-color:var(--tertiary-color);
+  color:var(--secondary-color);
+  font-family: inherit;
+  padding:10px;
+  border-radius: 10px; /* Curves the image (button) to be more visually appealing (a value of 50% will make it a circle */
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 0px solid rgba(0, 0, 0, 0.3);
+  /* longhand 
+  transition-duration: .5s;
+  transition-property: opacity; */
+  /* shorthand */
+  transition: color .7s transform 0.2s ease;
+  margin: 0px;
+  font-size: 20px;
 }
 
 .modal h1 {

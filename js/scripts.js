@@ -53,7 +53,7 @@ let pokemonRepository = (function () {
     })
   }
 
-  function showModal(title, imageUrl, heighttext, weighttext, abilitiestext) {
+  function showModal(title, imageUrl, heightText, weightText, typesText, abilitiesText) {
     let modalContainer = document.querySelector('#modal-container');
   
     // Clear all existing modal content
@@ -63,32 +63,36 @@ let pokemonRepository = (function () {
     modal.classList.add('modal');
   
     // Add the new modal content
-    let closeButtonElement = document.createElement('button');
+    let closeButtonElement = document.createElement('button__secondary');
     closeButtonElement.classList.add('modal-close');
     closeButtonElement.innerText = 'Close';
     closeButtonElement.addEventListener('click', hideModal);
 
     let titleElement = document.createElement('h1');
     titleElement.innerText = title;
-  
-    let heightElement = document.createElement('p');
-    heightElement.innerText = heighttext;
-
-    let weightElement = document.createElement('p');
-    weightElement.innerText = weighttext;
-
-    let abilitiesElement = document.createElement('p');
-    abilitiesElement.innerText = abilitiestext;
 
     let img = document.createElement('img');
     img.src = imageUrl;
     img.classList.add('pokemon-image');
+  
+    let heightElement = document.createElement('p');
+    heightElement.innerText = heightText;
+
+    let weightElement = document.createElement('p');
+    weightElement.innerText = weightText;
+
+    let typesElement = document.createElement('p');
+    typesElement.innerText = typesText.join(", ");
+
+    let abilitiesElement = document.createElement('p');
+    abilitiesElement.innerText = abilitiesText.join(", ");
     
     modal.appendChild(closeButtonElement);
     modal.appendChild(img); 
     modal.appendChild(titleElement);
     modal.appendChild(heightElement);
     modal.appendChild(weightElement);
+    modal.appendChild(typesElement);
     modal.appendChild(abilitiesElement);
     modalContainer.appendChild(modal);
   
@@ -119,6 +123,7 @@ let pokemonRepository = (function () {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.weight = details.weight;
+      item.types = details.types;
       item.abilities = details.abilities;
     }).catch(function (e) {
       console.error(e);
@@ -129,7 +134,7 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       console.log(pokemon);
-      showModal(pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1), pokemon.imageUrl, 'Height: ' + pokemon.height + ' dm', 'Weight: ' + pokemon.weight + ' kg', pokemon.abilities);
+      showModal(pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1), pokemon.imageUrl, 'Height: ' + pokemon.height + ' dm', 'Weight: ' + pokemon.weight + ' kg', pokemon.types, pokemon.abilities);
     });
   }
 
