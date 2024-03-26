@@ -1,18 +1,19 @@
 :root {
-    --primary-color: #3CB371;
-    --secondary-color: #000000;
+    --primary-color: #87CEEB;
+    --secondary-color: #4682B4;
     --tertiary-color: #F08080;
     --lightest-font-color: #fff;
     --focus-red-color: #CD5C5C;
-    --bodyfontsize: 35px;
-    --padding-margin-px:17px;
+    --dark-font-color: #191970;
+    --bodyfontsize: 25px;
+    --padding-margin-px:30px;
     --padding-margin-px-lg: 20px;
     --font-weight-700px: 700px;
     --max-width-700px: 700px;
 }
 
 a {
-    color: var(--secondary-color);
+    color: var(--dark-font-color);
     transition: transform 0.2s ease;
 }
 
@@ -35,7 +36,7 @@ body {
     font-size:var(--bodyfontsize);
     line-height: 1.5;
     text-align:justify;
-    color: var(--secondary-color);
+    color: var(--dark-font-color);
 }
 
 /* img {
@@ -54,6 +55,7 @@ h1 {
     font-weight:var(--font-weight-700px);
     line-height: 1;
     font-style: bold;
+    color: var(--dark-font-color);
 }
 
 h2  {
@@ -77,7 +79,7 @@ h4 {
 }
 
 p {
-    color: var(--secondary-color);
+    color: var(--dark-font-color);
     font-size:var(--bodyfontsize);
     line-height: 1.5;
     font-style: normal;
@@ -91,7 +93,7 @@ button,
     border: none;
     /* takes the font from the outer container */
     display: inline-block;
-    /* takes the font from te outer container */
+    /* takes the font from the outer container */
     font-family: inherit;
     /* styles the background color, font color, and text decoration (underline, etc.) of the button */
     background-color: var(--secondary-color);
@@ -107,7 +109,10 @@ button,
     transition-property: opacity; */
     /* shorthand */
     transition: color .7s transform 0.2s ease;
-    margin: 5px;
+    margin: 10px;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 20px;
 }
 
 button:hover, button:focus, .button:hover, .button:focus {
@@ -115,7 +120,7 @@ button:hover, button:focus, .button:hover, .button:focus {
     cursor: pointer;
     /* reduces the opacty of the button to 80% */
     background-color:var(--tertiary-color);
-    color:var(--secondary-color);
+    color:var(--dark-font-color);
     transform: scale(1.05);
 }
 
@@ -142,8 +147,9 @@ button:focus {
 html {
     padding:var(--padding-margin-px); /* Adds a 17px inner spacing to all sides*/
     margin:var(--padding-margin-px); /* Adds a 17px outer spacing to all sides*/
-    border: 5px solid var(--secondary-color); /* Attributes describe: thickness, type, color*/
+    border: 5px solid var(--dark-font-color); /* Attributes describe: thickness, type, color*/
     border-radius: 25px;
+    color: var(--dark-font-color);
 }
 
 * {
@@ -215,7 +221,7 @@ html {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
-  background: #66CDAA;
+  background: #B0E0E6;
   padding: 15px;
   width: 100%;
   max-width: 700px;
@@ -245,3 +251,5 @@ html {
     width: 150px;
     margin: 0 auto;
 }
+
+
