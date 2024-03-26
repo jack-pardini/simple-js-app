@@ -53,7 +53,7 @@ let pokemonRepository = (function () {
     })
   }
 
-  function showModal(title, imageUrl, heightText, weightText, typesText, abilitiesText) {
+  function showModal(title, imageUrl, heightText, weightText, types, abilities) {
     let modalContainer = document.querySelector('#modal-container');
   
     // Clear all existing modal content
@@ -81,15 +81,20 @@ let pokemonRepository = (function () {
     let weightElement = document.createElement('p');
     weightElement.innerText = weightText;
 
+    // Process types and abilities to extract the names
+    let typesText = types.map(typeItem => typeItem.type.name).join(", ");
+
+    let abilitiesText = abilities.map(abilityItem => abilityItem.ability.name).join(", ");
+    
     let typesElement = document.createElement('p');
-    typesElement.innerText = typesText.join(", ");
+    typesElement.innerText = 'Types: ' + typesText;
 
     let abilitiesElement = document.createElement('p');
-    abilitiesElement.innerText = abilitiesText.join(", ");
-    
+    abilitiesElement.innerText = 'Abilities: ' + abilitiesText;
+
     modal.appendChild(closeButtonElement);
-    modal.appendChild(img); 
     modal.appendChild(titleElement);
+    modal.appendChild(img); 
     modal.appendChild(heightElement);
     modal.appendChild(weightElement);
     modal.appendChild(typesElement);
