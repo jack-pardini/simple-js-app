@@ -1,10 +1,11 @@
 :root {
-    --primary-color: #87CEEB;
-    --secondary-color: #4682B4;
+    --primary-color: #9cc79c;
+    --secondary-color: #1c761c;
     --tertiary-color: #F08080;
     --lightest-font-color: #fff;
     --focus-red-color: #CD5C5C;
-    --dark-font-color: #191970;
+    --dark-font-color: #0b340b;
+    --modal-color: #92c892;
     --bodyfontsize: 25px;
     --padding-margin-px:30px;
     --padding-margin-px-lg: 20px;
@@ -250,7 +251,7 @@ html {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
-  background: #B0E0E6;
+  background: var(--modal-color);
   padding: 35px;
   width: 100%;
   max-width: 700px;
