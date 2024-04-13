@@ -57,6 +57,8 @@ h1 {
     line-height: 1;
     font-style: bold;
     color: var(--dark-font-color);
+    display:inline;
+    padding: 20px;
 }
 
 h2  {
