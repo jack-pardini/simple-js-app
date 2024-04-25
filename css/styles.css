@@ -204,7 +204,8 @@ html {
     }
 }
 
-.pokemon-list {
+.pokemon-list,
+pokemon-list list-group {
     text-decoration: none;
     list-style-type: none; /* Removes the bullet points */
     /* add CSS to sit next to each other */
@@ -213,12 +214,14 @@ html {
     justify-content: space-around;
 }
 
-.pokemon-list li {
+.pokemon-list li,
+pokemon-list list-group {
     flex-basis: calc(25% - 10px);
     margin: 5px;
 }
 
-.button-class {
+.button-class, 
+pokemon-list list-group {
     width: 100%;
 }
 
