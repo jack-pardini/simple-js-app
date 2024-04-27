@@ -181,21 +181,3 @@ fetch('https://pokeapi.co/api/v2/pokemon/').then(function (response) {
     showModal('Modal title', 'This is the modal content!');
   });
 })();
-
-
-
-
-
-
-//   var result;
-//   item.types.forEach(function (typeItem) {
-//     if (typeItem == 'Grass') {
-//       result = '<span style="color:green;"> ';
-//     } else if (typeItem == 'Fire') {
-//       result = '<span style="color:red;"> ';
-//     } else if (typeItem == 'Water') {
-//       result = '<span style="color:blue;"> ';  
-//     } else if (typeItem == 'Electric') {
-//       result = '<span style="color:yellow;"> ';
-//     }
-// }
