@@ -204,25 +204,27 @@ html {
     }
 }
 
-.pokemon-list,
-pokemon-list list-group {
+.item-container {
     text-decoration: none;
     list-style-type: none; /* Removes the bullet points */
     /* add CSS to sit next to each other */
     display:flex;
+    margin: 5px;
+    width: 100%;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.pokemon-list li,
-pokemon-list list-group {
-    flex-basis: calc(25% - 10px);
-    margin: 5px;
+.item {
+    width: 20px;
+    height: 20px;
+    flex: 1 1 22%;
+    margin: 10px;
+    margin-bottom: 30px;
 }
 
-.button-class, 
-pokemon-list list-group {
-    width: 100%;
+.pokemon {
+    padding: 5px 0 5px 0;
 }
 
 #modal-container {
@@ -254,12 +256,14 @@ pokemon-list list-group {
 
 .modal {
   margin: auto;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   background: var(--modal-color);
   padding: 35px;
   width: 100%;
   max-width: 700px;
+  max-height: 50vh;
   text-align:center;
   border-radius: 20px;
   position: relative;
@@ -284,6 +288,9 @@ pokemon-list list-group {
   transition: color .7s transform 0.2s ease;
   margin: -23px;
   font-size: 20px;
+  position: absolute;
+  top: 40px;
+  right: 60px;
 }
 
 .modal h1 {
