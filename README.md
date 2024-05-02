@@ -15,5 +15,11 @@ Project dependencies
 - Promise-Polyfill
 - Fetch
 
+To run the Pokedex Web App locally, follow these steps:
+
+- Clone this repository to your local machine using git clone.
+- Navigate to the project directory.
+- Open the index.html file in your web browser.
+
 Link to the Project:
 https://github.com/jack-pardini/simple-js-app
