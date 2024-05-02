@@ -38,6 +38,8 @@ body {
     line-height: 1.5;
     text-align:justify;
     color: var(--dark-font-color);
+    margin-right: 60px;
+    margin-bottom: 20px
 }
 
 /* img {
@@ -90,7 +92,6 @@ p {
 
 button, 
 .button, 
-.button-class,
 .button__secondary {
     /* overwrites browser defaults and resets the border */
     border: none;
@@ -220,11 +221,11 @@ html {
     height: 20px;
     flex: 1 1 22%;
     margin: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .pokemon {
-    padding: 5px 0 5px 0;
+    padding: 10px 0 10px 0;
 }
 
 #modal-container {
@@ -263,7 +264,7 @@ html {
   padding: 35px;
   width: 100%;
   max-width: 700px;
-  max-height: 50vh;
+  height: auto;
   text-align:center;
   border-radius: 20px;
   position: relative;
@@ -290,7 +291,7 @@ html {
   font-size: 20px;
   position: absolute;
   top: 40px;
-  right: 60px;
+  right: 40px;
 }
 
 .modal h1 {
