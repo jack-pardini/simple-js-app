@@ -199,7 +199,7 @@ fetch("https://pokeapi.co/api/v2/pokemon/")
     }
   });
 
-  document.querySelector(".pokemon").addEventListener("click", () => {
-    showModal("Modal title", "This is the modal content!");
-  });
+  // document.querySelector(".pokemon").addEventListener("click", () => {
+  //   showModal("Modal title", "This is the modal content!");
+  // });
 })();
