@@ -18,11 +18,8 @@ A web-based Pokédex application built with HTML, CSS, and JavaScript that displ
 
 ## Usage
 - Open the app in a browser.
-- Use the search bar to search for Pokemon by name.
-- Use the dropdown menu to filter Pokemon by type.
 - Click on a Pokemon card to view detailed stats and abilities.
-- Toggle between light and dark modes using the button in the top right.
-
+- Close the modal to return to main view.
 
 ## Built With
 - PokeAPI: Fetching Pokemon data.
