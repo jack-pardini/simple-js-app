@@ -1,25 +1,29 @@
-This application displays the details of a pokemon when a pokemon name is clicked.
+# Simple-js-app
 
-The app fetches data from an external API PokeAPI v2 - https://pokeapi.co/api/v2/pokemon/?limit=151
+## Description
+A web-based Pokédex application built with HTML, CSS, and JavaScript that displays Pokemon data fetched from an external API (PokéAPI). The app allows users to search for Pokemon by name and filter them by type, with a dark mode toggle for user customization.
 
-This app uses HTML, CSS, JavaScript, Bootstrap, jQuery, and ESlint.
+## Features
+- Fetches and displays a list of Pokemon from the PokeAPI.
+- Search Pokemon by name.
+- Filter Pokemon by type.
+- Displays detailed Pokemon stats and abilities in a modal.
+- Toggle between light and dark modes.
 
-Project dependencies
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/simple-js-app.git
+2. Open the index.html file in a browser to use the app.
 
-- HTML
-- CSS
-- JavaScript
-- Bootstrap 4.3.1
-- jQuery 3.3.1
-- Popper 1.14.7
-- Promise-Polyfill
-- Fetch
+## Usage
+- Open the app in a browser.
+- Click on a Pokemon card to view detailed stats and abilities.
+- Close the modal to return to main view.
 
-To run the Pokedex Web App locally, follow these steps:
-
-- Clone this repository to your local machine using git clone.
-- Navigate to the project directory.
-- Open the index.html file in your web browser.
-
-Link to the Project:
-https://github.com/jack-pardini/simple-js-app
+## Built With
+- PokeAPI: Fetching Pokemon data.
+- Bootstrap: Styling and modal handling.
+- jQuery: DOM manipulation and modal triggering.
+- LocalStorage: Theme persistence (dark mode and light mode).
+- JSON: Handling API responses and parsing data.
